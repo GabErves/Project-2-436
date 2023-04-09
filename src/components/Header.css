@@ -1,0 +1,21 @@
+.logo{
+    display: "flex"; 
+    justify-content: "center"; 
+    align-items: "space-between"; 
+    height: "100vh";
+}
+.navs{
+   
+    font-size: 35px;
+    color: black;
+    
+}
+.navs a{
+    color: black;
+}
+li{
+    text-align: "center";
+}
+.text{
+    color: black;
+}
