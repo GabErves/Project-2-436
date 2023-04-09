@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import Carousel from 'react-bootstrap/Carousel';
 
 
 const Home = () => {
@@ -14,36 +15,45 @@ const Home = () => {
 
 <p  className="text-center">So what are you waiting for? Start exploring our site and become a part of our vibrant community of bloggers. We can't wait to see what you create!</p> */}
 
-<div id="carouselExampleIndicators" class="carousel" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="https://www.hotbeautyhealth.com/wp-content/uploads/2016/02/start-a-lifestyle-blog.jpg" alt="First slide"/>
-      <div class="carousel-caption d-none d-md-block">
-    <h5 className='text'>Lifestyle Blogging</h5>
-    <p className='text'>Host your own lifestyle blog here!</p>
-  </div>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/wp-content/uploads/2022/09/brand_identity.jpg" alt="Second slide"/>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/wp-content/uploads/2022/09/brand_identity.jpg" alt="Third slide"/>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+<Carousel>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://www.hotbeautyhealth.com/wp-content/uploads/2016/02/start-a-lifestyle-blog.jpg"
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h3 className='text'>Lifestyle Blogging</h3>
+          <p className='text'>Host your lifestyle blog here!</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/wp-content/uploads/2022/09/brand_identity.jpg"
+          alt="Second slide"
+        />
+
+        <Carousel.Caption>
+          <h3 className='text'>Food Blogging</h3>
+          <p className='text'>Host your food blog here!</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://www.forbes.com/advisor/wp-content/uploads/2022/09/how_to_start_a_travel_blog_-_article_image.jpg"
+          alt="Third slide"
+        />
+
+        <Carousel.Caption>
+          <h3 className='text'>Travel Blogging</h3>
+          <p className='text'>
+            Host your travel blog here!
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
     </div>
   )
 };
