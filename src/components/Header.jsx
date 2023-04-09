@@ -15,8 +15,10 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-
-          <img className='logo' src={Logo22} alt="My Image" />
+      <RouterLink to="/">
+      <img className='logo' src={Logo22} alt="My Image" />
+      </RouterLink>
+          
          
           <button
             class="navbar-toggler"
