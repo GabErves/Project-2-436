@@ -27,6 +27,14 @@ app.use((err, req, res, next) => {
   sendError(res, 500, 'Internal server error');
 });
 
+app.use((err, req, res, next) => {
+  if (err.code === 'ECONNRESET') {
+    res.status(503).json({ error: 'Service Unavailable' });
+  } else {
+    next(err);
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

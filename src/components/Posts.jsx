@@ -14,10 +14,21 @@ const Posts = () => {
     setLoading(true);
     const URL = 'http://localhost:3001/v1/api/posts';
 
-    const data_received = await axios.get('http://localhost:3001/v1/api/posts');
+    try{
+      const response = await axios.get(URL);
+      setPostData(response.data);
+      console.log(JSON.stringify(response));
 
-    setLoading(false);
-    setPostData(data_received.data);
+    } catch (error){
+      setError(error);
+    } finally{
+      setLoading(false);
+    }
+
+    // const data_received = await axios.get('http://localhost:3001/v1/api/posts');
+
+    // setLoading(false);
+    // setPostData(data_received.data);
   };
 
   useEffect(() => {
