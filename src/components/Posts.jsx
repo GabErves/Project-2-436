@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+
 import { useState, useEffect } from 'react';
+import Header from './Header';
 
 const Posts = () => {
   const [loading, setLoading] = useState(false);
@@ -14,10 +15,15 @@ const Posts = () => {
     setLoading(true);
     const URL = 'http://localhost:3001/v1/api/posts';
 
-    const data_received = await axios.get('http://localhost:3001/v1/api/posts');
-
-    setLoading(false);
-    setPostData(data_received.data);
+    try {
+      const response = await axios.get(URL);
+      setPostData(response.data);
+      console.log(JSON.stringify(response));
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -25,19 +31,38 @@ const Posts = () => {
   }, []);
 
   if (loading) {
-    return <p> Loading... </p>;
+    return (
+      <>
+        <p>Data Here: {JSON.stringify(postData)}</p>
+        <h3 className="text-center p-4"> Loading... </h3>
+      </>
+    );
   }
 
   //JSX:
   return (
     <>
-      <h2 className="text-center">All Posts</h2>;
-      <div className="container">
+      <h2 className="text-center">All Posts</h2>
+      <div className="container align-center">
         {postData.map((post) => {
           return (
-            <p key={post.id} className="font-bold">
-              Title: {post.title}
-            </p>
+            <>
+              <div className="row">
+                <div className="col-sm-6 py-3">
+                  <div className="card width-m py-2" key={post.id}>
+                    <Link to={`/posts/${post.id}`}>
+                      <div className="card-body">
+                        <h3 className="font-bold card-title">{post.title}</h3>
+                        <h6 className="card-subtitle mb-2 text-muted">
+                          (@User)
+                        </h6>
+                        <p className="card-text">{post.content}</p>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </>
           );
         })}
       </div>

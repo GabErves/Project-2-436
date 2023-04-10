@@ -15,11 +15,9 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-      <RouterLink to="/">
-      <img className='logo' src={Logo22} alt="My Image" />
-      </RouterLink>
-          
-         
+          <RouterLink to="/">
+            <img className="logo" src={Logo22} alt="My Image" />
+          </RouterLink>
           <button
             class="navbar-toggler"
             type="button"
@@ -29,40 +27,11 @@ const Header = () => {
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div className="collapse navbar-collapse" id="navmenu">
-            <ul className="navbar-nav ms-auto fs-3 fw-bold">
-
-            
-
-              
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-
-
-
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navmenu"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div className="collapse navbar-collapse" id="navmenu">
-            <ul className="navbar-nav ms-auto fs-3 fw-bold">
+          <div className="collapse navbar-collapse pt-3 px-3" id="navmenu">
+            <ul className="navbar-nav ms-auto fs-3">
               <li className="nav-link navs">
                 <h3 className="navs">
-                  <RouterLink
-                    className={`${getClassName} text-2xl font-bold `}
-                    to="/"
-                  >
+                  <RouterLink className={`${getClassName} text-2xl`} to="/">
                     Home
                   </RouterLink>
                 </h3>
@@ -71,7 +40,7 @@ const Header = () => {
               <li className="nav-link">
                 <h3 className="navs">
                   <RouterLink
-                    className={`${getClassName} text-2xl font-bold`}
+                    className={`${getClassName} text-2xl `}
                     to="/create"
                   >
                     Create
@@ -82,7 +51,7 @@ const Header = () => {
               <li className="nav-link">
                 <h3 className="navs">
                   <RouterLink
-                    className={`${getClassName} text-2xl font-bold`}
+                    className={`${getClassName} text-2xl `}
                     to="/posts"
                   >
                     All Posts

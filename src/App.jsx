@@ -21,8 +21,7 @@ import NotFound from './components/NotFound';
 const App = () => {
   return (
     <>
-      <Header />
-
+      <Header></Header>
       <Routes>
         <Route index element={<Home />}></Route>
         <Route path="/create" element={<Create />}></Route>
