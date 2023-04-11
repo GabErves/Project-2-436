@@ -58,7 +58,7 @@ const Header = () => {
               </li>
 
               <li className="nav-link">
-                <h3 className="navs">
+                <h3 className="navs navbar-nav navbar-right">
                   <RouterLink
                     className={`${getClassName} text-2xl `}
                     to="/posts"
