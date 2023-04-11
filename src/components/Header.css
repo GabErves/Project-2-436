@@ -22,3 +22,19 @@ li{
 .text{
     color: black;
 }
+.top a{
+    text-decoration: none;
+}
+.top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.size{
+    height: 150px;
+    width: 250px;
+    padding-bottom: 10px;
+
+}

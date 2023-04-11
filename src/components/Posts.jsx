@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './Header.css';
 
 import { useState, useEffect } from 'react';
 import Header from './Header';
@@ -15,7 +16,7 @@ const Posts = () => {
     setLoading(true);
     const URL = 'http://localhost:3001/v1/api/posts';
 
-<<<<<<< HEAD
+
     try{
       const response = await axios.get(URL);
       setPostData(response.data);
@@ -31,7 +32,7 @@ const Posts = () => {
 
     // setLoading(false);
     // setPostData(data_received.data);
-=======
+
     try {
       const response = await axios.get(URL);
       setPostData(response.data);
@@ -41,7 +42,7 @@ const Posts = () => {
     } finally {
       setLoading(false);
     }
->>>>>>> abd1f8ae65f58e93a079aa52a87e3438fe588fe7
+
   };
 
   useEffect(() => {
@@ -65,16 +66,17 @@ const Posts = () => {
         {postData.map((post) => {
           return (
             <>
-              <div className="row">
-                <div className="col-sm-6 py-3">
-                  <div className="card width-m py-2" key={post.id}>
+              <div className="row top">
+                <div className="col-sm-6 py-3 top">
+                  <div className="card width-m py-2 top" key={post.id}>
                     <Link to={`/posts/${post.id}`}>
                       <div className="card-body">
-                        <h3 className="font-bold card-title">{post.title}</h3>
-                        <h6 className="card-subtitle mb-2 text-muted">
+                        <h3 className="font-bold card-title top">{post.title}</h3>
+                        <h6 className="card-subtitle mb-2 text-muted top">
                           (@User)
                         </h6>
                         <p className="card-text">{post.content}</p>
+                        <img className='size' src='https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/11/how-to-write-a-blog-post.jpeg'></img>
                       </div>
                     </Link>
                   </div>

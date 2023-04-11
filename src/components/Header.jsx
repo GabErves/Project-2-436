@@ -15,7 +15,7 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-<<<<<<< HEAD
+
       <RouterLink to="/">
       <img className='logo' src={Logo22} alt="My Image" />
       </RouterLink>
