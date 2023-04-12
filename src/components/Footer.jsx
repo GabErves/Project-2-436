@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <Container className="bg-brown-300 text-3xl font-bold text-center">
       <div>"Sharing perspectives, inspiring minds: the power of blogging."</div>
-      Copyright © 2023, Bulletin Social
+      Copyright © 2023, Bulletin Social Hello World
     </Container>
   );
 };
