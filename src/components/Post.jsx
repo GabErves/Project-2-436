@@ -1,5 +1,5 @@
 import React from 'react';
-
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -10,6 +10,9 @@ const Post = () => {
   console.log(params['id']); //gets id
 
   const [loading, setLoading] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
   const [error, setError] = useState(null);
   const [postData, setPostData] = useState([]);
 
@@ -20,6 +23,12 @@ const Post = () => {
     try {
       const response = await axios.get(URL);
       setPostData(response.data);
+
+      setTitle(postData.title);
+      console.log(title);
+      setContent(postData.content);
+      console.log(content);
+
       console.log(JSON.stringify(response));
     } catch (error) {
       setError(error);
@@ -45,7 +54,7 @@ const Post = () => {
       <h2 className="text-center">Specific Post</h2>
       <div className="container align-center">
         <>
-          <div className="row">
+          <div className="row top">
             <div className="col-sm-6 py-3">
               <div className="card width-m py-2">
                 <div className="card-body">
@@ -59,6 +68,20 @@ const Post = () => {
             </div>
           </div>
         </>
+      </div>
+
+      <div className="container text-center ">
+        <Link to={`/posts/${postData.id}/edit`}>
+          <button type="button" className="btn btn-primary btn-lg mx-3">
+            Edit Post
+          </button>
+        </Link>
+
+        <Link to={`/posts/${postData.id}/delete`}>
+          <button type="button" className="btn btn-danger btn-lg mx-3">
+            Delete Post
+          </button>
+        </Link>
       </div>
     </>
   );
